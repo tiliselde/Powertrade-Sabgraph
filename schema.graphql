@@ -1,0 +1,31 @@
+type _Approval @entity {
+  id: ID!
+  count: BigInt!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  amount: BigInt!
+}
+
+type _DelegateChanged @entity {
+  id: ID!
+  count: BigInt!
+  delegator: Bytes! # address
+  fromDelegate: Bytes! # address
+  toDelegate: Bytes!
+}
+
+type _DelegateVotesChanged @entity {
+  id: ID!
+  count: BigInt!
+  delegate: Bytes! # address
+  previousBalance: BigInt!
+  newBalance: BigInt!
+}
+
+type _Transfer @entity {
+  id: ID!
+  count: BigInt!
+  from: Bytes! # address
+  to: Bytes! # address
+  amount: BigInt!
+}
